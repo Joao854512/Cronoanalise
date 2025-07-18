@@ -6,8 +6,6 @@ self.addEventListener('install', event => {
         '/index.html',
         '/script.js',
         '/manifest.json',
-        'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js'
       ]);
     })
   );
