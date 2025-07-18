@@ -16,19 +16,11 @@ let dadosRegistro = [];
 let inicioTempo = null;
 let intervalo = null;
 let tempoAtivo = null;
-
 let tempos = [];
-
-fetch("estrutura.json")
-  .then(res => res.json())
-  .then(data => {
-    dadosJson = data.filter(d => d.Predio && d.Linha && d.Posto && d.Atividade);
-    preencherPredios();
-  })
-  .catch(err => console.error("Erro ao carregar estrutura.json:", err));
 
 function preencherPredios() {
   const selectPredio = document.getElementById('selectPredio');
+  selectPredio.innerHTML = '<option value="">Selecione o Prédio</option>';
   const predios = [...new Set(dadosJson.map(d => d.Predio))].sort();
   predios.forEach(predio => {
     const option = document.createElement('option');
@@ -226,3 +218,11 @@ function exportarCSV() {
   document.body.removeChild(link);
 }
 
+// Inicia a leitura do JSON após definir as funções
+fetch("estrutura.json")
+  .then(res => res.json())
+  .then(data => {
+    dadosJson = data.filter(d => d.Predio && d.Linha && d.Posto && d.Atividade);
+    preencherPredios();
+  })
+  .catch(err => console.error("Erro ao carregar estrutura.json:", err));
