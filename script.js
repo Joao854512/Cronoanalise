@@ -1,3 +1,5 @@
+// script.js
+
 const tiposTempo = [
   { nome: "Operacao", classe: "botao-operacao" },
   { nome: "Maquina", classe: "botao-maquina" },
@@ -10,14 +12,13 @@ const tiposTempo = [
 let dadosJson = [];
 let atividadeAtual = 0;
 let atividades = [];
-let dadosRegistro = []; // Vai guardar os dados agregados se quiser
+let dadosRegistro = [];
 let inicioTempo = null;
 let intervalo = null;
 let tempoAtivo = null;
 
-let tempos = []; // Array de objetos, um para cada atividade, com tempos acumulados por tipo
+let tempos = [];
 
-// Carregar JSON
 fetch("estrutura.json")
   .then(res => res.json())
   .then(data => {
@@ -26,12 +27,56 @@ fetch("estrutura.json")
   })
   .catch(err => console.error("Erro ao carregar estrutura.json:", err));
 
-// ... manter preencherPredios, preencherLinhas e preencherPostos igual
+function preencherPredios() {
+  const selectPredio = document.getElementById('selectPredio');
+  const predios = [...new Set(dadosJson.map(d => d.Predio))].sort();
+  predios.forEach(predio => {
+    const option = document.createElement('option');
+    option.value = predio;
+    option.textContent = predio;
+    selectPredio.appendChild(option);
+  });
+
+  selectPredio.addEventListener('change', () => {
+    preencherLinhas(selectPredio.value);
+  });
+}
+
+function preencherLinhas(predio) {
+  const selectLinha = document.getElementById('selectLinha');
+  selectLinha.innerHTML = '<option value="">Selecione a Linha</option>';
+  const linhas = [...new Set(dadosJson.filter(d => d.Predio === predio).map(d => d.Linha))].sort();
+  linhas.forEach(linha => {
+    const option = document.createElement('option');
+    option.value = linha;
+    option.textContent = linha;
+    selectLinha.appendChild(option);
+  });
+
+  selectLinha.addEventListener('change', () => {
+    preencherPostos(predio, selectLinha.value);
+  });
+}
+
+function preencherPostos(predio, linha) {
+  const selectPosto = document.getElementById('selectPosto');
+  selectPosto.innerHTML = '<option value="">Selecione o Posto</option>';
+  const postos = [...new Set(dadosJson.filter(d => d.Predio === predio && d.Linha === linha).map(d => d.Posto))].sort();
+  postos.forEach(posto => {
+    const option = document.createElement('option');
+    option.value = posto;
+    option.textContent = posto;
+    selectPosto.appendChild(option);
+  });
+
+  selectPosto.addEventListener('change', () => {
+    carregarAtividades(predio, linha, selectPosto.value);
+  });
+}
 
 function carregarAtividades(predio, linha, posto) {
   atividades = dadosJson.filter(d => d.Predio === predio && d.Linha === linha && d.Posto === posto);
   atividadeAtual = 0;
-  // Inicializar tempos para cada atividade
   tempos = atividades.map(item => {
     let obj = { atividade: item.Atividade };
     tiposTempo.forEach(t => (obj[t.nome] = 0));
@@ -42,11 +87,9 @@ function carregarAtividades(predio, linha, posto) {
   atualizarTempoTotal();
 }
 
-// Atualizar criarBotoes para só criar botões das atividades (como antes)
 function criarBotoes() {
   const divBotoes = document.getElementById('botoesAtividades');
-  if(!divBotoes) {
-    // Se quiser criar div específica para botões das atividades
+  if (!divBotoes) {
     const div = document.createElement('div');
     div.id = 'botoesAtividades';
     document.getElementById('botoes').appendChild(div);
@@ -61,11 +104,10 @@ function criarBotoes() {
   });
 }
 
-// Mostrar atividade e tipos de tempo para ela
 function mostrarAtividade() {
   const titulo = document.getElementById('atividadeAtualTitulo');
   const div = document.getElementById('botoes');
-  div.innerHTML = ''; // limpar
+  div.innerHTML = '';
 
   if (!atividades[atividadeAtual]) {
     titulo.textContent = 'Todas as atividades foram registradas.';
@@ -77,7 +119,6 @@ function mostrarAtividade() {
   const atv = atividades[atividadeAtual].Atividade;
   titulo.textContent = `Atividade Atual: ${atv}`;
 
-  // Mostrar botões e tempo para cada tipo
   tiposTempo.forEach(t => {
     const linha = document.createElement('div');
     linha.className = 'linha-tempo';
@@ -90,7 +131,6 @@ function mostrarAtividade() {
   });
 }
 
-// Função para trocar tipo de tempo ativo
 function trocarTempo(novoTipo) {
   if (tempoAtivo) {
     clearInterval(intervalo);
@@ -108,7 +148,6 @@ function trocarTempo(novoTipo) {
   }, 100);
 }
 
-// Parar todos tempos ativos
 function pararTudo() {
   if (tempoAtivo) {
     clearInterval(intervalo);
@@ -120,7 +159,6 @@ function pararTudo() {
   }
 }
 
-// Avançar atividade
 function pularAtividade() {
   pararTudo();
   if (atividadeAtual + 1 < atividades.length) {
@@ -129,7 +167,6 @@ function pularAtividade() {
   }
 }
 
-// Voltar atividade
 function voltarAtividade() {
   pararTudo();
   if (atividadeAtual > 0) {
@@ -138,7 +175,6 @@ function voltarAtividade() {
   }
 }
 
-// Atualizar tempo total acumulado
 function calcularTempoTotal() {
   let total = 0;
   tempos.forEach(t => {
@@ -151,11 +187,10 @@ function calcularTempoTotal() {
 
 function atualizarTempoTotal() {
   const el = document.getElementById('tempoTotalAcumulado');
-  if(el)
+  if (el)
     el.textContent = `Tempo total acumulado: ${calcularTempoTotal().toFixed(2)} minutos`;
 }
 
-// Gerar tabela resumo de tempos
 function gerarTabelaResumo() {
   const divResumo = document.getElementById('tabelaResumo');
   if (!tempos.length) return;
@@ -176,14 +211,13 @@ function gerarTabelaResumo() {
   divResumo.innerHTML = html;
 }
 
-// Exportar CSV (pode adaptar para XLSX com a lib XLSX)
 function exportarCSV() {
   const nome = document.getElementById('nomeArquivo').value || 'dados';
   let csv = 'Atividade,' + tiposTempo.map(t => t.nome).join(',') + '\n';
   tempos.forEach(t => {
     csv += t.atividade + ',' + tiposTempo.map(tt => t[tt.nome].toFixed(2)).join(',') + '\n';
   });
-  const blob = new Blob([csv], {type: 'text/csv'});
+  const blob = new Blob([csv], { type: 'text/csv' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
   link.download = `${nome}.csv`;
@@ -191,3 +225,4 @@ function exportarCSV() {
   link.click();
   document.body.removeChild(link);
 }
+
