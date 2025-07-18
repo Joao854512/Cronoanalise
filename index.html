@@ -121,6 +121,15 @@
 <div id="tempoTotalAcumulado"></div>
 <div id="tabelaResumo"></div>
 
+<!-- Service Worker e Manifest para PWA -->
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(reg => console.log('Service Worker registrado', reg))
+      .catch(err => console.warn('Erro ao registrar SW', err));
+  }
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
 <script src="script.js"></script>
