@@ -75,7 +75,13 @@ function criarBotoes() {
   atividades.forEach((item, index) => {
     const botao = document.createElement('button');
     botao.textContent = item.Atividade;
-    botao.className = `botao-${item.tipo.toLowerCase()}`;
+
+    // Verifica se tipo existe antes de aplicar toLowerCase
+    const tipoClasse = item.tipo && typeof item.tipo === 'string'
+      ? `botao-${item.tipo.toLowerCase()}`
+      : 'botao-outros';
+
+    botao.className = tipoClasse;
     botao.onclick = () => iniciarAtividade(index);
     divBotoes.appendChild(botao);
   });
