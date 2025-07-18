@@ -1,0 +1,1736 @@
+[
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Frame Cleaning and Main Harness Assembly",
+        "Atividade":"Limpeza da parte superior do frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Frame Cleaning and Main Harness Assembly",
+        "Atividade":"Movimentação para o cavalete e limpeza da parte inferior do frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Frame Cleaning and Main Harness Assembly",
+        "Atividade":"Movimentação para o carrinho de montagem da linha principal do upper frame e limpeza dos batoques"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Frame Cleaning and Main Harness Assembly",
+        "Atividade":"Montagem dos componentes e do chicote"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Posicionamento das clamps e roteiro do chicote principal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem do chicote do farol e do farol"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Pré montagem do bottom plate"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem do alarme sonoro e caixa de chicotes do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem do bottom plate"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Chicote da buzina e buzina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem do pipe central"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem da válvula solenóide"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Montagem da válvula EPPR"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bottom Plate",
+        "Atividade":"Fixação do terminal hidráulico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Ligação das mangueiras do terminal 1°parte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Ligação das mangueiras da solenóide 1° parte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Montagem das baterias"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Docking MCV"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Ligação das mangueiras do terminal 2° parte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Ligação das mangueiras da solenóide 2° parte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Montagem das mangueiras do pipe"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Docking",
+        "Atividade":"Gravação das plaquetas e fixação "
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Docking",
+        "Atividade":"Montagem inferior do bottom plate e montagem do bracket do pipe"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Docking",
+        "Atividade":"Montagem da mangueira do A\/C e preparação do pipe de retorno"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Docking",
+        "Atividade":"Docking do tanque de ligação das mangueiras inferiores do tanque"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Docking",
+        "Atividade":"Ligação da parte traseira do tank, montagem da toolbox e coxim do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine Docking",
+        "Atividade":"Fixação do motor, mangueira diesel e montagem dos chicotes e mangueiras do A\/C"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine Docking",
+        "Atividade":"Conexões da bomba hidráulica"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Radiator Assembly",
+        "Atividade":"Fixação do radiador e montagem das mangueiras do A\/C e sistema hidráulico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do Handrail e Retrovisor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do Cowl RH"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do Filtro Turbina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem da capa do Relê"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do Main Screen"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do Cowl LH"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do sistema do filtro de Ar"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem da Fusebox"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Montagem do reservatório do limpa vidro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Docking and alignment",
+        "Atividade":"Remoção de Gaps e Alinhamento das Portas"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Swing Bearing, Idler and travel motor",
+        "Atividade":"Montagem Swing Bearing e movimentação para o cavalete"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Swing Bearing, Idler and travel motor",
+        "Atividade":"Montagem do Idler, Travel Motor e Sprocket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Lower Roller e Turning Joint",
+        "Atividade":"Montagem dos roletes superiores"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Lower Roller e Turning Joint",
+        "Atividade":"Montagem dos roletes inferiores"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Lower Roller e Turning Joint",
+        "Atividade":"Montagem das Track Guards"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Assembly of Lower Roller e Turning Joint",
+        "Atividade":"Pré montagem e montagem do Turning Joint"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Track chain assembly",
+        "Atividade":"Preparação das mangueiras e conexões + abertura das esteiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Track chain assembly",
+        "Atividade":"Ligação das conexões do turning joint e aplicação de graxa no Swing Bearing"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Track chain assembly",
+        "Atividade":"Posicionamento e fechamento das esteiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Track chain assembly",
+        "Atividade":"Aplicação do pino fixo e tensionamento das esteiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Lower and Upper Docking",
+        "Atividade":"Posicionamento do componente para dockagem"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Lower and Upper Docking",
+        "Atividade":"Fixação (Apertos e Torques)"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Lower and Upper Docking",
+        "Atividade":"Ligação das mangueiras do Turning Joint"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Swing Motor Docking",
+        "Atividade":"Docking do Swing Motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Swing Motor Docking",
+        "Atividade":"Ligação das conexões e mangueiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Docking",
+        "Atividade":"Docking da cabine, acabamento interno e chicotes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fluid Supply and cylinders Assembly",
+        "Atividade":"Montagem dos cilindros, pinos e tampões"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fluid Supply and cylinders Assembly",
+        "Atividade":"Abastecimento de fluidos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fluid Supply and cylinders Assembly",
+        "Atividade":"Teste funcionamento da máquina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Counter Weight and Engine Hood Assembly",
+        "Atividade":"Retirada de ar do sistema da esteira"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Counter Weight and Engine Hood Assembly",
+        "Atividade":"Abastecimento A\/C"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Counter Weight and Engine Hood Assembly",
+        "Atividade":"Pré montagem do CW"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Counter Weight and Engine Hood Assembly",
+        "Atividade":"Docking CW"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Counter Weight and Engine Hood Assembly",
+        "Atividade":"Montagem da tampa do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Attach Docking",
+        "Atividade":"Movimentação + engraxamento do Boom"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Attach Docking",
+        "Atividade":"Montagem do cilindro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Attach Docking",
+        "Atividade":"Engraxamento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bucket Assembly and Docking",
+        "Atividade":"Pré montagem do Bucket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bucket Assembly and Docking",
+        "Atividade":"Docking do Bucket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Bucket Assembly and Docking",
+        "Atividade":"Engraxamento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Movimentação para suporte e montagem das conexões"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Montagem das mangueiras de baixa pressão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Preparação e montagem dos casquilhos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Montagem das mangueiras de alta pressão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Pré montagem dos pipes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Pré montagem da válvula solenóide"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"MCV Pre Assembly",
+        "Atividade":"Pré montagem do terminal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Limpeza e movimentação dos tanques para o dispositivo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Montagem inferior do tanque"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Movimentação do tanque para o carrinho de montagem"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Montagem do bocal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Montagem das partes externas do tanque"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Montagem e documentação da MCU"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Fuel and Hyd tank Pre Assembly",
+        "Atividade":"Aplicação de Decal e movimentação para o buffer da linha"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Movimentação para o dispositivo, limpeza e preparação do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem do chicote principal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem dos componentes do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem do suporte do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem do esticador e correia"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem da hélice"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem do relê e dos chicotes do relê"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Montagem da bomba principal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Engine and Main Pump Pre Assembly",
+        "Atividade":"Docking Bomba principal, muffler e movimentação do motor para buffer da linha"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Radiator Pre Assembly",
+        "Atividade":"Movimentaçãp, limpeza e Documentação"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Radiator Pre Assembly",
+        "Atividade":"Separação de materiais e montagem dos componentes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Pre assembly",
+        "Atividade":"Setup dos dispositivos de montagem dos cowls"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Pre assembly",
+        "Atividade":"Montagem do Cowl lado Esquerdo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Pre assembly",
+        "Atividade":"Montagem do Cowl lado direito"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cowl Pre assembly",
+        "Atividade":"Montagem do reservatório do líquido de arrefecimento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Swing Motor Pre Assembly",
+        "Atividade":"Preparação e Limpeza"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Swing Motor Pre Assembly",
+        "Atividade":"Montagem das conexões e casquilhos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Pre Assembly",
+        "Atividade":"Movimentação para carrinho de montagem"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Pre Assembly",
+        "Atividade":"Montagem externa da cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Pre Assembly",
+        "Atividade":"Montagem interna da cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Pre Assembly",
+        "Atividade":"Pré montagem das plates"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Cabin Pre Assembly",
+        "Atividade":"Colagem dos decals"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Boom Pre Assembly",
+        "Atividade":"Limpeza, alocação dos retentores e pinos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Boom Pre Assembly",
+        "Atividade":"Montagem das graxeiras e mangueiras da graxeiras, chicote elétrico e Farol"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Boom Pre Assembly",
+        "Atividade":"Pipes e cilindros"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Boom Pre Assembly",
+        "Atividade":"Mangueira do cilindro do ARM"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Arm Pre Assembly",
+        "Atividade":"Montagem Cilindro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Arm Pre Assembly",
+        "Atividade":"Montagem do Control Rod e Control Link"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Arm Pre Assembly",
+        "Atividade":"Montagem das Mangueiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Escavadeira",
+        "Posto":"Sub Attach Docking",
+        "Atividade":"Preparation and Docking the attach"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Movimentação do tanque para o suporte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Limpeza do tanque e roscas"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Montagem das mangueiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Montagem do alarme sonoro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Montagem do Pescador"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Conferência do O-Ring da tampa"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Fuel Tank",
+        "Atividade":"Montagem dos tampões inferior e superior"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Movimentação eixo para o suporte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Limpeza do eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem das mangueiras e conectores"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem da balança dianteira"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem do cardan"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem do Center Pivot da balança traseira"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem da balança traseira"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Montagem dos componentes do eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Engraxamento do eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Rear Axle",
+        "Atividade":"Movimentação para o buffer do eixo traseiro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Movimentação e docking do tanque diesel"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Docking eixo traseiro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Limpeza do frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Instalação do chicote principal, baterias, relês e chave geral"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Montagem das tampas de baterias e batentes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Montagem das graxeiras, conectores e batentes frontais"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Montagem do pipe do óleo da Transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Montagem dos cilindros de direção, conexões e mangueiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Montagem dos blocos e mangueiras"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Gravação da plaqueta e fixação da plaqueta no rear"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Preparation and Docking Fuel tank and Rear axle)",
+        "Atividade":"Gravação do serial do chassi"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Pré montagem do motor \/ transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Movimentação para o suporte"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Fixação no suporte traseiro do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem do suporte do compressor de ar e do compressor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem do chicote do compressor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem da bomba de freio"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem da conexão da mangueira de  combustível"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Acabamento e verificação do nível de óleo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem das conexões do ar quente, suportes e relês"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Ligação dos chicotes, motor de partida, relês, alternador e cabo massa"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Acabamento dos chicotes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Preparação para acoplagem da Transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Movimentação da transmissão para o galão de descarte de óleo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem do nível de óleo na transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Movimentação da transmissão para o dispositivo de montagem "
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem do suporte traseiro e dianteiro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem das conexões da transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Preparação para acoplagem no motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Movimentação para o motor e acoplagem"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Anotar no documento identificação da bomba principal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Preparação para acoplagem e acoplagem da bomba no conjunto do motor\/ transmissão"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem dos pipes, blocos e conexões da bomba"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Engine \/ Transmission",
+        "Atividade":"Montagem de mangueiras e do bloco do carter"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Radiator",
+        "Atividade":"Movimentação do suporte de montagem para o centro do posto "
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Radiator",
+        "Atividade":"Limpeza da peça e Remoção do Tampões "
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Radiator",
+        "Atividade":"Montagem das Mangueiras e conexões"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Radiator",
+        "Atividade":"Movimentação peça pré montada para o buffer do docking"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem do Muffler"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem air cleaner"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem chaminé"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem da colmeia do ar condicionado e mangueiras do ar"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem do kit do fan motor e grades de proteção interna e externa"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cowl",
+        "Atividade":"Montagem da trava da porta, farol traseiro e câmera e grade"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Limpeza e preparação dos componentes do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Movimentação do motor até o Rear Frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Montagem do motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Ligação do cardan no eixo traseiro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Energizar o aterramento do motor e o chicote de aterramento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Limpeza e preparação dos componentes do radiador"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Movimentação do radiador até o Rear Frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Ligação do dreno e mangueiras de retorno"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Ligação das mangueiras principais do radiador"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Preparação e limpeza do cowl"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Movimentação do cowl para o docking"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Ligação fan motor"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Aperto e alinhamento porta traseira do cowl"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Acabamento e acessórios parte traseira da máquina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"Ligação das mangueiras de retorno e pipes do muffler"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking of Engine\/ transmission, radiator and Cowl)",
+        "Atividade":"ligação das mangueiras, acessórios e montagem dos degraus"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Hyd Tank",
+        "Atividade":"Montagem das conexões e mangueiras da parte inferior"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Hyd Tank",
+        "Atividade":"Montagem dos pipes de retorno e sucção"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Hyd Tank",
+        "Atividade":"Montagem da valvula de alívio, filtros e aste"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Hyd Tank",
+        "Atividade":"Montagem das conexões na parte traseira do tanque e visor de nível de óleo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Valves",
+        "Atividade":"Montagem da safety valve"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Valves",
+        "Atividade":"Montagem da shoto valve"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Valves",
+        "Atividade":"Montagem da cut off Valve"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Valves",
+        "Atividade":"Montagem da orbitrol valve"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Hyd Tank and Valves)",
+        "Atividade":"Movimentação do tanque para o rear frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Hyd Tank and Valves)",
+        "Atividade":"Montagem e ligação das mangueiras do tanque hidráulico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Limpeza das roscas e montagem dos chicotes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Montagem do suporte do farol e do farol"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Montagem da buzina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Movimentação do eixo pra suporte e conferência do nível de óleo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Montagem das conexões e mangueiras do eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Docking Front com Eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Front Axle)",
+        "Atividade":"Engraxamento do eixo"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Drive Shaft)",
+        "Atividade":"Montagem do cardan"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Drive Shaft)",
+        "Atividade":"Montagem do suporte do cardan e cardan central"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Drive Shaft)",
+        "Atividade":"Pré montagem da MCV"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Drive Shaft)",
+        "Atividade":"Movimentação da MCV para  o Front e Docking da MCV"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Drive Shaft)",
+        "Atividade":"Ligação das mangueiras do terminal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Cylinders)",
+        "Atividade":"Montagem do cilindro boom"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Preparação e montagem dos pipes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Montagem dos rolamentos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Pré montagem do Boom"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Doking do Boom no Front"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Montagem do sensor de aproximação do boom"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Montagem do cilindro do Bucket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Front Frame (Boom Assembly)",
+        "Atividade":"Montagem do suporte do Parabarro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Preparação Cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Montagem do filtro de ar"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Montagem da plaqueta"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Adição do fluído do limpador de parabrisa"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Montagem dos retrovisores"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Soltar a tampa do compartimento dos chicotes"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Cabin",
+        "Atividade":"Instalar opcionais"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Docking Rear e Front"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Limpeza dos componentes e do frame"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Coleta de materal nos bins"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Embuchamento do rear"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem do pino superior, plate e parafusos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem do espaçador inferior, posicionamento do plate , montagem do pino e parafusos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem do eixo cardan"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras de alimentação do boom"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem dos cilindros de direção"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Docking da cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Movimentação da cabine preparada para a máquina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras da RCV"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras do break fan"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras do tanque hidráulico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras de água quente"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Acabamento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação das mangueiras do ar condicionado"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"ligação das mangueiras do tanque hydraulico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Acabamento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem do chicote aterramento da cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação do chicote de alimentação da cabine"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Calafetar o plate"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação da valvula de segurança e a shoto valve"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Ligação do terminal"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Aperto e torque do parafuso do coxim e HOPS"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem do suporte para carenagem plástica + carenagens"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem dos acabamentos metálicos, suportes dos parabarros e escadas"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Rear Frame (Docking Rear\/Front and Cabin)",
+        "Atividade":"Montagem dos parabarros e handrails"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"Injeção gás do ar condicionado"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"Montagem do contrapeso e faróis traseiros"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"1° Ciclo de abastecimento de Fluídos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"Teste de funcionamento da máquina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"2° Ciclo de abastecimento de Fluídos"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Fluid Supply",
+        "Atividade":"Sangria de Óleo de freio"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Remoção do pneu da gaiola"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Remover a trava da roda"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Remover o anel de travamento da roda"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Montagem do bico"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Passar produto"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Colocar o pneu no aro"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Colocar anéis de travamento"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Mover a roda para o dispositivo de instalação do O-ring"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Instalação do O-ring"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Montagem da trava da roda"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Sub Tires",
+        "Atividade":"Calibrar Roda"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Movimentação Roda 1"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Montagem da Roda 1"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Movimentação Roda 2"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Montagem da Roda 2"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Movimentação Roda 3"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Montagem da Roda 3"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Movimentação Roda 4"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Montagem da Roda 4"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Torque das 4 rodas"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Tires",
+        "Atividade":"Montagem dos Parabarros"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Limpeza dos links"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Realizar o processo de resfriamento da bucha no nitrogênio"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Embuchamento dos links e montagem dos retentores"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Movimentar o link para a área de montagem do bucket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Montagem do link na máquina"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Montagem do Bucket"
+    },
+    {
+        "Predio":"Montagem",
+        "Linha":"Carregadeira",
+        "Posto":"Bucket",
+        "Atividade":"Montagem dos dentes no bucket"
+    }
+]
