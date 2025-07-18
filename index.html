@@ -1,3 +1,16 @@
+Sim, com certeza.
+
+Aqui está o código HTML e JavaScript completo e atualizado, contendo todas as correções que você pediu.
+
+Este arquivo inclui:
+
+1.  A estrutura de seleção em cascata para **Prédios**, **Linhas** e **Postos**.
+2.  A função `mostrarAtividade()` corrigida para exibir a mensagem de conclusão ao final das atividades.
+3.  A função `exportarCSV()` atualizada para incluir as colunas de **Prédio** e **Linha** na planilha exportada.
+
+Você pode substituir o seu arquivo por este código completo.
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -150,7 +163,6 @@
         let linhaSelecionada = "";
         let postoSelecionado = "";
 
-        // NOVA FUNÇÃO: Carrega os dados do arquivo JSON
         async function carregarDadosJSON() {
             try {
                 const response = await fetch("estrutura.json");
@@ -173,7 +185,6 @@
             }
         }
 
-        // NOVA FUNÇÃO: Popula as linhas com base no prédio selecionado
         function selecionarPredio() {
             predioSelecionado = document.getElementById("selectPredio").value;
             linhaSelecionada = "";
@@ -196,7 +207,6 @@
             limparAtividade();
         }
 
-        // NOVA FUNÇÃO: Popula os postos com base na linha selecionada
         function selecionarLinha() {
             linhaSelecionada = document.getElementById("selectLinha").value;
             postoSelecionado = "";
@@ -215,7 +225,6 @@
             limparAtividade();
         }
 
-        // FUNÇÃO ATUALIZADA: Inicia as atividades com base no posto selecionado
         function selecionarPosto() {
             postoSelecionado = document.getElementById("selectPosto").value;
             if (!predioSelecionado || !linhaSelecionada || !postoSelecionado) return;
@@ -253,6 +262,7 @@
             div.innerHTML = "";
 
             const idx = atividadeAtual;
+            
             if (!atividades[idx]) {
                 titulo.innerHTML = "<h3>Todas as atividades foram registradas.</h3>";
                 document.getElementById("btnProxima").style.display = "none";
@@ -391,7 +401,6 @@
             divResumo.innerHTML = html;
         }
 
-        // Chama a função de carregamento ao iniciar a página
         window.addEventListener("load", carregarDadosJSON);
 
         if ("serviceWorker" in navigator) {
