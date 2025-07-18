@@ -1,138 +1,407 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Controle de Tempos por Atividade</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#2196f3">
-  <style>
-    body {
-      font-family: Arial;
-      padding: 10px;
-      margin: 0;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 6px;
-      text-align: center;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    button {
-      margin: 6px;
-      padding: 10px 16px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 6px;
-    }
-    .linha-tempo {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      gap: 10px;
-    }
-    .linha-tempo span {
-      flex: 1;
-      text-align: left;
-      font-size: 14px;
-    }
-    .botao-operacao {
-      background-color: #90ee90;
-    }
-    .botao-maquina {
-      background-color: #90ee90;
-    }
-    .botao-outros {
-      background-color: #f08080;
-    }
-    .botao-documentacao {
-      background-color: #d3d3d3;
-    }
-    #tabelaResumo {
-      margin-top: 30px;
-      overflow-x: auto;
-    }
-    #botoesControle {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    input, select {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
-    @media (min-width: 600px) {
-      #botoesControle {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Controle de Tempos por Atividade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2196f3" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 4px 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin: 6px 4px;
+            padding: 10px 18px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+        .linha-tempo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            gap: 6px;
+        }
+        .linha-tempo span {
+            flex: 1;
+            text-align: left;
+            font-size: 12px;
+        }
+        #nomeOperadorLabel {
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 14px;
+            color: #2196f3;
+        }
+        #nomeOperador {
+            font-size: 14px;
+            padding: 6px;
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 15px;
+            border: 2px solid #2196f3;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #nomeOperadorExibicao {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        #tabelaResumo {
+            margin-top: 20px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .botao-operacao {
+            background-color: #90ee90;
+        }
+        .botao-maquina {
+            background-color: #90ee90;
+        }
+        .botao-outros {
+            background-color: #f08080;
+        }
+        .botao-documentacao {
+            background-color: #d3d3d3;
+        }
+        input[type="file"],
+        select,
+        #nomeArquivo {
+            font-size: 14px;
+            padding: 6px;
+            margin: 8px 0;
+            width: 100%;
+            max-width: 350px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
+    <h2 style="font-size:18px; margin-bottom:12px;">Registro de Tempos por Atividade</h2>
 
-<h2>Registro de Tempos por Atividade</h2>
+    <label id="nomeOperadorLabel" for="nomeOperador">Nome do Operador:</label>
+    <input type="text" id="nomeOperador" placeholder="Digite o nome do operador" />
 
-<!-- Filtros de seleção -->
-<select id="selectPredio">
-  <option value="">Selecione o Prédio</option>
-</select>
+    <select id="selectPredio" onchange="selecionarPredio()"></select>
+    <select id="selectLinha" onchange="selecionarLinha()"></select>
+    <select id="selectPosto" onchange="selecionarPosto()"></select>
 
-<select id="selectLinha">
-  <option value="">Selecione a Linha</option>
-</select>
+    <div id="nomeOperadorExibicao"></div>
 
-<select id="selectPosto">
-  <option value="">Selecione o Posto</option>
-</select>
+    <div id="atividadeAtualTitulo" style="font-size:16px; margin: 12px 0;"></div>
+    <div id="botoes"></div>
+    <div id="botoesControle" style="display:flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
+        <button class="botao-documentacao" onclick="pularAtividade()" id="btnProxima">Próxima</button>
+        <button class="botao-documentacao" onclick="voltarAtividade()">Voltar</button>
+        <button class="botao-documentacao" id="btnParar" onclick="pararTudo()">Parar Tudo</button>
+    </div>
 
-<div>
-  <input type="text" id="nomeOperador" placeholder="Nome do Operador">
-</div>
+    <div style="margin-top:12px;">
+        <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)" />
+        <button onclick="exportarCSV()" style="margin-top:6px; padding: 10px 20px; font-size: 14px;">Exportar Dados</button>
+    </div>
 
-<div id="atividadeAtualTitulo"></div>
-<div id="botoes"></div>
-<div id="botoesControle">
-  <button class="botao-documentacao" onclick="pularAtividade()" id="btnProxima">Próxima Atividade</button>
-  <button class="botao-documentacao" onclick="voltarAtividade()">Voltar Atividade</button>
-  <button class="botao-documentacao" id="btnParar" onclick="pararTudo()">Parar Todos os Tempos</button>
-</div>
+    <div id="tempoTotalAcumulado" style="margin-top: 12px; font-size: 14px;"></div>
+    <div id="tabelaResumo"></div>
 
-<div>
-  <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)">
-  <button onclick="exportarCSV()">Exportar Dados</button>
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        const tiposTempo = [
+            { nome: "Operacao", classe: "botao-operacao" },
+            { nome: "Maquina", classe: "botao-maquina" },
+            { nome: "Movimentacao", classe: "botao-outros" },
+            { nome: "Espera", classe: "botao-outros" },
+            { nome: "Retrabalho", classe: "botao-outros" },
+            { nome: "Aciclicos", classe: "botao-documentacao" },
+        ];
 
-<div id="tempoTotalAcumulado"></div>
-<div id="tabelaResumo"></div>
+        let dadosCompletos = {};
+        let atividades = [];
+        let tempos = [];
+        let atividadeAtual = 0;
+        let tempoAtivo = null;
+        let intervalo = null;
+        let inicioTempo = null;
+        let predioSelecionado = "";
+        let linhaSelecionada = "";
+        let postoSelecionado = "";
 
-<!-- Service Worker e Manifest para PWA -->
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('Service Worker registrado', reg))
-      .catch(err => console.warn('Erro ao registrar SW', err));
-  }
-</script>
+        // NOVA FUNÇÃO: Carrega os dados do arquivo JSON
+        async function carregarDadosJSON() {
+            try {
+                const response = await fetch("estrutura.json");
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                dadosCompletos = await response.json();
+                
+                const selectPredio = document.getElementById("selectPredio");
+                selectPredio.innerHTML = `<option value="">Selecione o prédio</option>`;
+                Object.keys(dadosCompletos).forEach((predio) => {
+                    const option = document.createElement("option");
+                    option.value = predio;
+                    option.text = predio;
+                    selectPredio.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Não foi possível carregar o arquivo JSON:", error);
+                alert("Erro ao carregar os dados. Verifique o arquivo estrutura.json.");
+            }
+        }
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
-<script src="script.js"></script>
+        // NOVA FUNÇÃO: Popula as linhas com base no prédio selecionado
+        function selecionarPredio() {
+            predioSelecionado = document.getElementById("selectPredio").value;
+            linhaSelecionada = "";
+            postoSelecionado = "";
+            
+            const selectLinha = document.getElementById("selectLinha");
+            const selectPosto = document.getElementById("selectPosto");
+            
+            selectLinha.innerHTML = `<option value="">Selecione a linha</option>`;
+            selectPosto.innerHTML = `<option value="">Selecione o posto</option>`;
+            
+            if (predioSelecionado) {
+                Object.keys(dadosCompletos[predioSelecionado]).forEach((linha) => {
+                    const option = document.createElement("option");
+                    option.value = linha;
+                    option.text = linha;
+                    selectLinha.appendChild(option);
+                });
+            }
+            limparAtividade();
+        }
 
+        // NOVA FUNÇÃO: Popula os postos com base na linha selecionada
+        function selecionarLinha() {
+            linhaSelecionada = document.getElementById("selectLinha").value;
+            postoSelecionado = "";
+            
+            const selectPosto = document.getElementById("selectPosto");
+            selectPosto.innerHTML = `<option value="">Selecione o posto</option>`;
+            
+            if (predioSelecionado && linhaSelecionada) {
+                Object.keys(dadosCompletos[predioSelecionado][linhaSelecionada]).forEach((posto) => {
+                    const option = document.createElement("option");
+                    option.value = posto;
+                    option.text = posto;
+                    selectPosto.appendChild(option);
+                });
+            }
+            limparAtividade();
+        }
+
+        // FUNÇÃO ATUALIZADA: Inicia as atividades com base no posto selecionado
+        function selecionarPosto() {
+            postoSelecionado = document.getElementById("selectPosto").value;
+            if (!predioSelecionado || !linhaSelecionada || !postoSelecionado) return;
+            
+            atividades = dadosCompletos[predioSelecionado][linhaSelecionada][postoSelecionado];
+            atividadeAtual = 0;
+            tempos = new Array(atividades.length).fill(null);
+            mostrarAtividade();
+            atualizarTempoTotal();
+            atualizarNomeOperadorExibicao();
+        }
+
+        function limparAtividade() {
+            pararTudo();
+            document.getElementById("atividadeAtualTitulo").innerHTML = "";
+            document.getElementById("botoes").innerHTML = "";
+            document.getElementById("btnProxima").style.display = "none";
+            document.getElementById("btnParar").style.display = "none";
+            document.getElementById("tabelaResumo").innerHTML = "";
+            document.getElementById("tempoTotalAcumulado").innerText = "";
+        }
+
+        function atualizarNomeOperadorExibicao() {
+            const nome = document.getElementById("nomeOperador").value.trim();
+            const div = document.getElementById("nomeOperadorExibicao");
+            div.textContent = nome ? `Operador: ${nome}` : "";
+        }
+
+        document.getElementById("nomeOperador").addEventListener("input", atualizarNomeOperadorExibicao);
+
+        function mostrarAtividade() {
+            const titulo = document.getElementById("atividadeAtualTitulo");
+            const div = document.getElementById("botoes");
+            const btnParar = document.getElementById("btnParar");
+            div.innerHTML = "";
+
+            const idx = atividadeAtual;
+            if (!atividades[idx]) {
+                titulo.innerHTML = "<h3>Todas as atividades foram registradas.</h3>";
+                document.getElementById("btnProxima").style.display = "none";
+                btnParar.style.display = "none";
+                atualizarTempoTotal();
+                gerarTabelaResumo();
+                return;
+            }
+
+            const atv = atividades[idx];
+            titulo.innerHTML = `<h3>Atividade: ${atv}</h3>`;
+
+            if (!tempos[idx]) {
+                tempos[idx] = { atividade: atv };
+                tiposTempo.forEach((t) => (tempos[idx][t.nome] = 0));
+            }
+
+            tiposTempo.forEach((t) => {
+                const linha = document.createElement("div");
+                linha.className = "linha-tempo";
+                linha.innerHTML = `
+                    <span>${t.nome}</span>
+                    <button class="${t.classe}" onclick="trocarTempo('${t.nome}')">Iniciar</button>
+                    <span id="${t.nome}-${idx}">${tempos[idx][t.nome].toFixed(2)}</span>
+                `;
+                div.appendChild(linha);
+            });
+
+            document.getElementById("btnProxima").style.display = "inline-block";
+            btnParar.style.display = "inline-block";
+            atualizarTempoTotal();
+        }
+
+        function trocarTempo(novoTipo) {
+            const idx = atividadeAtual;
+
+            if (tempoAtivo) {
+                clearInterval(intervalo);
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                tempos[idx][tempoAtivo] += decorrido;
+                document.getElementById(`${tempoAtivo}-${idx}`).innerText = tempos[idx][tempoAtivo].toFixed(2);
+            }
+
+            tempoAtivo = novoTipo;
+            inicioTempo = Date.now();
+            intervalo = setInterval(() => {
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                const total = tempos[idx][novoTipo] + decorrido;
+                document.getElementById(`${novoTipo}-${idx}`).innerText = total.toFixed(2);
+                atualizarTempoTotal();
+            }, 100);
+        }
+
+        function pararTudo() {
+            if (tempoAtivo) {
+                clearInterval(intervalo);
+                const idx = atividadeAtual;
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                tempos[idx][tempoAtivo] += decorrido;
+                document.getElementById(`${tempoAtivo}-${idx}`).innerText = tempos[idx][tempoAtivo].toFixed(2);
+                tempoAtivo = null;
+                atualizarTempoTotal();
+            }
+        }
+
+        function pularAtividade() {
+            pararTudo();
+            atividadeAtual++;
+            mostrarAtividade();
+        }
+
+        function voltarAtividade() {
+            pararTudo();
+            if (atividadeAtual > 0) {
+                atividadeAtual--;
+                mostrarAtividade();
+            }
+        }
+
+        function exportarCSV() {
+            const nomeOperador = document.getElementById("nomeOperador").value.trim();
+            if (!nomeOperador) {
+                alert("Por favor, preencha o nome do operador antes de exportar.");
+                return;
+            }
+            if (!tempos.length) {
+                alert("Nenhum dado para exportar.");
+                return;
+            }
+            const nomeArquivo =
+                document.getElementById("nomeArquivo").value || `tempos_${predioSelecionado}_${linhaSelecionada}_${postoSelecionado}`;
+            const dados = tempos
+                .filter(Boolean)
+                .map((t) => ({ Operador: nomeOperador, Predio: predioSelecionado, Linha: linhaSelecionada, Posto: postoSelecionado, ...t }));
+            const ws = XLSX.utils.json_to_sheet(dados);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Resultados");
+            XLSX.writeFile(wb, `${nomeArquivo}.xlsx`);
+        }
+
+        function calcularTempoTotal() {
+            let total = 0;
+            tempos.forEach((t) => {
+                if (t) tiposTempo.forEach((tt) => (total += t[tt.nome]));
+            });
+            return total;
+        }
+
+        function atualizarTempoTotal() {
+            document.getElementById(
+                "tempoTotalAcumulado"
+            ).innerText = `Tempo total acumulado: ${calcularTempoTotal().toFixed(2)} minutos`;
+        }
+
+        function gerarTabelaResumo() {
+            const divResumo = document.getElementById("tabelaResumo");
+            if (!tempos.length) return;
+
+            let html = "<h3>Resumo das Atividades:</h3><table><thead><tr><th>Atividade</th>";
+            tiposTempo.forEach((t) => {
+                html += `<th>${t.nome}</th>`;
+            });
+            html += "</tr></thead><tbody>";
+
+            tempos.forEach((t) => {
+                if (t) {
+                    html += `<tr><td>${t.atividade}</td>`;
+                    tiposTempo.forEach((tt) => {
+                        html += `<td>${t[tt.nome].toFixed(2)}</td>`;
+                    });
+                    html += "</tr>";
+                }
+            });
+
+            html += "</tbody></table>";
+            divResumo.innerHTML = html;
+        }
+
+        // Chama a função de carregamento ao iniciar a página
+        window.addEventListener("load", carregarDadosJSON);
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("sw.js")
+                    .then((reg) => console.log("Service Worker registrado", reg))
+                    .catch((err) => console.error("Erro no Service Worker", err));
+            });
+        }
+    </script>
 </body>
 </html>
