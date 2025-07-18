@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Tempos por Atividade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2196f3">
+  <style>
+    body {
+      font-family: Arial;
+      padding: 10px;
+      margin: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      margin: 6px;
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+    }
+    .linha-tempo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+    .linha-tempo span {
+      flex: 1;
+      text-align: left;
+      font-size: 14px;
+    }
+    .botao-operacao {
+      background-color: #90ee90;
+    }
+    .botao-maquina {
+      background-color: #90ee90;
+    }
+    .botao-outros {
+      background-color: #f08080;
+    }
+    .botao-documentacao {
+      background-color: #d3d3d3;
+    }
+    #tabelaResumo {
+      margin-top: 30px;
+      overflow-x: auto;
+    }
+    #botoesControle {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    @media (min-width: 600px) {
+      #botoesControle {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Registro de Tempos por Atividade</h2>
+
+<!-- Filtros de seleção -->
+<select id="selectPredio">
+  <option value="">Selecione o Prédio</option>
+</select>
+
+<select id="selectLinha">
+  <option value="">Selecione a Linha</option>
+</select>
+
+<select id="selectPosto">
+  <option value="">Selecione o Posto</option>
+</select>
+
+<div>
+  <input type="text" id="nomeOperador" placeholder="Nome do Operador">
+</div>
+
+<div id="atividadeAtualTitulo"></div>
+<div id="botoes"></div>
+<div id="botoesControle">
+  <button class="botao-documentacao" onclick="pularAtividade()" id="btnProxima">Próxima Atividade</button>
+  <button class="botao-documentacao" onclick="voltarAtividade()">Voltar Atividade</button>
+  <button class="botao-documentacao" id="btnParar" onclick="pararTudo()">Parar Todos os Tempos</button>
+</div>
+
+<div>
+  <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)">
+  <button onclick="exportarCSV()">Exportar Dados</button>
+</div>
+
+<div id="tempoTotalAcumulado"></div>
+<div id="tabelaResumo"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
