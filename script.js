@@ -1,20 +1,23 @@
-let estrutura = [];
+// script.js
+
+let dadosJson = [];
+let atividadeAtual = 0;
 let atividades = [];
 let dadosRegistro = [];
-let atividadeAtual = 0;
 let inicioAtividade = null;
 
-// Carrega o JSON
-fetch('estrutura.json')
-  .then(response => response.json())
+// Carrega estrutura.json e inicia preenchimento
+fetch("estrutura.json")
+  .then(res => res.json())
   .then(data => {
-    estrutura = data;
-    preencherFiltros();
-  });
+    dadosJson = data;
+    preencherPredios();
+  })
+  .catch(err => console.error("Erro ao carregar estrutura.json:", err));
 
-function preencherFiltros() {
+function preencherPredios() {
   const selectPredio = document.getElementById('selectPredio');
-  const predios = [...new Set(estrutura.map(e => e.predio))].sort();
+  const predios = [...new Set(dadosJson.map(d => d.predio))].sort();
   predios.forEach(predio => {
     const option = document.createElement('option');
     option.value = predio;
@@ -30,7 +33,7 @@ function preencherFiltros() {
 function preencherLinhas(predio) {
   const selectLinha = document.getElementById('selectLinha');
   selectLinha.innerHTML = '<option value="">Selecione a Linha</option>';
-  const linhas = [...new Set(estrutura.filter(e => e.predio === predio).map(e => e.linha))].sort();
+  const linhas = [...new Set(dadosJson.filter(d => d.predio === predio).map(d => d.linha))].sort();
   linhas.forEach(linha => {
     const option = document.createElement('option');
     option.value = linha;
@@ -46,9 +49,7 @@ function preencherLinhas(predio) {
 function preencherPostos(predio, linha) {
   const selectPosto = document.getElementById('selectPosto');
   selectPosto.innerHTML = '<option value="">Selecione o Posto</option>';
-  const postos = [...new Set(
-    estrutura.filter(e => e.predio === predio && e.linha === linha).map(e => e.posto)
-  )].sort();
+  const postos = [...new Set(dadosJson.filter(d => d.predio === predio && d.linha === linha).map(d => d.posto))].sort();
   postos.forEach(posto => {
     const option = document.createElement('option');
     option.value = posto;
@@ -62,9 +63,7 @@ function preencherPostos(predio, linha) {
 }
 
 function carregarAtividades(predio, linha, posto) {
-  atividades = estrutura.filter(e =>
-    e.predio === predio && e.linha === linha && e.posto === posto
-  );
+  atividades = dadosJson.filter(d => d.predio === predio && d.linha === linha && d.posto === posto);
   criarBotoes();
   mostrarAtividade();
 }
