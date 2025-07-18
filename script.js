@@ -1,33 +1,26 @@
-// script.js
-
-let db;
-let atividadeAtual = 0;
+let estrutura = [];
 let atividades = [];
 let dadosRegistro = [];
+let atividadeAtual = 0;
 let inicioAtividade = null;
 
-// Carrega o banco SQLite
-initSqlJs({ locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}` })
-  .then(SQL => {
-    fetch('banco.sqlite')
-      .then(res => res.arrayBuffer())
-      .then(buffer => {
-        db = new SQL.Database(new Uint8Array(buffer));
-        preencherFiltros();
-      });
+// Carrega o JSON
+fetch('estrutura.json')
+  .then(response => response.json())
+  .then(data => {
+    estrutura = data;
+    preencherFiltros();
   });
 
 function preencherFiltros() {
   const selectPredio = document.getElementById('selectPredio');
-  const stmt = db.prepare("SELECT DISTINCT predio FROM estrutura ORDER BY predio");
-  while (stmt.step()) {
-    const row = stmt.getAsObject();
+  const predios = [...new Set(estrutura.map(e => e.predio))].sort();
+  predios.forEach(predio => {
     const option = document.createElement('option');
-    option.value = row.predio;
-    option.textContent = row.predio;
+    option.value = predio;
+    option.textContent = predio;
     selectPredio.appendChild(option);
-  }
-  stmt.free();
+  });
 
   selectPredio.addEventListener('change', () => {
     preencherLinhas(selectPredio.value);
@@ -37,16 +30,13 @@ function preencherFiltros() {
 function preencherLinhas(predio) {
   const selectLinha = document.getElementById('selectLinha');
   selectLinha.innerHTML = '<option value="">Selecione a Linha</option>';
-  const stmt = db.prepare("SELECT DISTINCT linha FROM estrutura WHERE predio = ? ORDER BY linha");
-  stmt.bind([predio]);
-  while (stmt.step()) {
-    const row = stmt.getAsObject();
+  const linhas = [...new Set(estrutura.filter(e => e.predio === predio).map(e => e.linha))].sort();
+  linhas.forEach(linha => {
     const option = document.createElement('option');
-    option.value = row.linha;
-    option.textContent = row.linha;
+    option.value = linha;
+    option.textContent = linha;
     selectLinha.appendChild(option);
-  }
-  stmt.free();
+  });
 
   selectLinha.addEventListener('change', () => {
     preencherPostos(predio, selectLinha.value);
@@ -56,16 +46,15 @@ function preencherLinhas(predio) {
 function preencherPostos(predio, linha) {
   const selectPosto = document.getElementById('selectPosto');
   selectPosto.innerHTML = '<option value="">Selecione o Posto</option>';
-  const stmt = db.prepare("SELECT DISTINCT posto FROM estrutura WHERE predio = ? AND linha = ? ORDER BY posto");
-  stmt.bind([predio, linha]);
-  while (stmt.step()) {
-    const row = stmt.getAsObject();
+  const postos = [...new Set(
+    estrutura.filter(e => e.predio === predio && e.linha === linha).map(e => e.posto)
+  )].sort();
+  postos.forEach(posto => {
     const option = document.createElement('option');
-    option.value = row.posto;
-    option.textContent = row.posto;
+    option.value = posto;
+    option.textContent = posto;
     selectPosto.appendChild(option);
-  }
-  stmt.free();
+  });
 
   selectPosto.addEventListener('change', () => {
     carregarAtividades(predio, linha, selectPosto.value);
@@ -73,15 +62,9 @@ function preencherPostos(predio, linha) {
 }
 
 function carregarAtividades(predio, linha, posto) {
-  atividades = [];
-  const stmt = db.prepare("SELECT atividade, tipo FROM estrutura WHERE predio = ? AND linha = ? AND posto = ? ORDER BY id");
-  stmt.bind([predio, linha, posto]);
-  while (stmt.step()) {
-    const row = stmt.getAsObject();
-    atividades.push(row);
-  }
-  stmt.free();
-
+  atividades = estrutura.filter(e =>
+    e.predio === predio && e.linha === linha && e.posto === posto
+  );
   criarBotoes();
   mostrarAtividade();
 }
