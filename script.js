@@ -17,7 +17,7 @@ fetch("estrutura.json")
 
 function preencherPredios() {
   const selectPredio = document.getElementById('selectPredio');
-  const predios = [...new Set(dadosJson.map(d => d.predio))].sort();
+  const predios = [...new Set(dadosJson.map(d => d.Predio))].sort();
   predios.forEach(predio => {
     const option = document.createElement('option');
     option.value = predio;
@@ -33,7 +33,7 @@ function preencherPredios() {
 function preencherLinhas(predio) {
   const selectLinha = document.getElementById('selectLinha');
   selectLinha.innerHTML = '<option value="">Selecione a Linha</option>';
-  const linhas = [...new Set(dadosJson.filter(d => d.predio === predio).map(d => d.linha))].sort();
+  const linhas = [...new Set(dadosJson.filter(d => d.Predio === predio).map(d => d.Linha))].sort();
   linhas.forEach(linha => {
     const option = document.createElement('option');
     option.value = linha;
@@ -49,7 +49,7 @@ function preencherLinhas(predio) {
 function preencherPostos(predio, linha) {
   const selectPosto = document.getElementById('selectPosto');
   selectPosto.innerHTML = '<option value="">Selecione o Posto</option>';
-  const postos = [...new Set(dadosJson.filter(d => d.predio === predio && d.linha === linha).map(d => d.posto))].sort();
+  const postos = [...new Set(dadosJson.filter(d => d.Predio === predio && d.Linha === linha).map(d => d.Posto))].sort();
   postos.forEach(posto => {
     const option = document.createElement('option');
     option.value = posto;
@@ -63,7 +63,7 @@ function preencherPostos(predio, linha) {
 }
 
 function carregarAtividades(predio, linha, posto) {
-  atividades = dadosJson.filter(d => d.predio === predio && d.linha === linha && d.posto === posto);
+  atividades = dadosJson.filter(d => d.Predio === predio && d.Linha === linha && d.Posto === posto);
   criarBotoes();
   mostrarAtividade();
 }
@@ -73,7 +73,7 @@ function criarBotoes() {
   divBotoes.innerHTML = '';
   atividades.forEach((item, index) => {
     const botao = document.createElement('button');
-    botao.textContent = item.atividade;
+    botao.textContent = item.Atividade;
     botao.className = `botao-${item.tipo.toLowerCase()}`;
     botao.onclick = () => iniciarAtividade(index);
     divBotoes.appendChild(botao);
@@ -83,7 +83,7 @@ function criarBotoes() {
 function mostrarAtividade() {
   const titulo = document.getElementById('atividadeAtualTitulo');
   if (atividades[atividadeAtual]) {
-    titulo.textContent = `Atividade Atual: ${atividades[atividadeAtual].atividade}`;
+    titulo.textContent = `Atividade Atual: ${atividades[atividadeAtual].Atividade}`;
   } else {
     titulo.textContent = '';
   }
@@ -97,7 +97,7 @@ function iniciarAtividade(index) {
       linha: document.getElementById('selectLinha').value,
       posto: document.getElementById('selectPosto').value,
       operador: document.getElementById('nomeOperador').value,
-      atividade: atividades[atividadeAtual].atividade,
+      atividade: atividades[atividadeAtual].Atividade,
       tipo: atividades[atividadeAtual].tipo,
       tempo: tempo.toFixed(2)
     };
@@ -129,7 +129,7 @@ function pararTudo() {
       linha: document.getElementById('selectLinha').value,
       posto: document.getElementById('selectPosto').value,
       operador: document.getElementById('nomeOperador').value,
-      atividade: atividades[atividadeAtual].atividade,
+      atividade: atividades[atividadeAtual].Atividade,
       tipo: atividades[atividadeAtual].tipo,
       tempo: tempo.toFixed(2)
     };
