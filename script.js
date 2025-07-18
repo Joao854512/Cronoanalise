@@ -10,7 +10,8 @@ let inicioAtividade = null;
 fetch("estrutura.json")
   .then(res => res.json())
   .then(data => {
-    dadosJson = data;
+    // Ignora silenciosamente registros incompletos
+    dadosJson = data.filter(d => d.Predio && d.Linha && d.Posto && d.Atividade);
     preencherPredios();
   })
   .catch(err => console.error("Erro ao carregar estrutura.json:", err));
