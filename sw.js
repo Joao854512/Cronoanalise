@@ -3,11 +3,11 @@ self.addEventListener('install', event => {
     caches.open('atividade-tempo-cache-v1').then(cache => {
       return cache.addAll([
         '/',
-        '/index.html',
-        '/script.js',
-        '/manifest.json',
-        'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js',
+  '/index.html',
+  '/script.js',
+  '/manifest.json',
+  '/libs/xlsx.js',
+  '/libs/sql-wasm.js',
       ]);
     })
   );
