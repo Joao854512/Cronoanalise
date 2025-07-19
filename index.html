@@ -1,16 +1,3 @@
-Sim, com certeza.
-
-Aqui está o código HTML e JavaScript completo e atualizado, contendo todas as correções que você pediu.
-
-Este arquivo inclui:
-
-1.  A estrutura de seleção em cascata para **Prédios**, **Linhas** e **Postos**.
-2.  A função `mostrarAtividade()` corrigida para exibir a mensagem de conclusão ao final das atividades.
-3.  A função `exportarCSV()` atualizada para incluir as colunas de **Prédio** e **Linha** na planilha exportada.
-
-Você pode substituir o seu arquivo por este código completo.
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -165,7 +152,7 @@ Você pode substituir o seu arquivo por este código completo.
 
         async function carregarDadosJSON() {
             try {
-                const response = await fetch("estrutura.json");
+                const response = await fetch("estrutura.json", { cache: "no-store" }); // 🔧 Correção aqui
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -372,9 +359,7 @@ Você pode substituir o seu arquivo por este código completo.
         }
 
         function atualizarTempoTotal() {
-            document.getElementById(
-                "tempoTotalAcumulado"
-            ).innerText = `Tempo total acumulado: ${calcularTempoTotal().toFixed(2)} minutos`;
+            document.getElementById("tempoTotalAcumulado").innerText = `Tempo total acumulado: ${calcularTempoTotal().toFixed(2)} minutos`;
         }
 
         function gerarTabelaResumo() {
