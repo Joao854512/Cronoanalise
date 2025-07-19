@@ -106,9 +106,9 @@
     <label id="nomeOperadorLabel" for="nomeOperador">Nome do Operador:</label>
     <input type="text" id="nomeOperador" placeholder="Digite o nome do operador" />
 
-    <select id="selectPredio" onchange="selecionarPredio()"><option value="">Selecione o prédio</option></select>
-    <select id="selectLinha" onchange="selecionarLinha()"><option value="">Selecione a linha</option></select>
-    <select id="selectPosto" onchange="selecionarPosto()"><option value="">Selecione o posto</option></select>
+    <select id="selectPredio" onchange="selecionarPredio()"></select>
+    <select id="selectLinha" onchange="selecionarLinha()"></select>
+    <select id="selectPosto" onchange="selecionarPosto()"></select>
 
     <div id="nomeOperadorExibicao"></div>
 
@@ -139,8 +139,7 @@
             { nome: "Aciclicos", classe: "botao-documentacao" },
         ];
 
-        let dadosOriginais = []; // Array original do JSON
-        let dadosCompletos = {}; // Objeto aninhado: predio > linha > posto > atividades[]
+        let dadosCompletos = {}; // Estrutura aninhada para selects
         let atividades = [];
         let tempos = [];
         let atividadeAtual = 0;
@@ -156,12 +155,11 @@
                 const response = await fetch("estrutura.json");
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-                dadosOriginais = await response.json();
+                const dadosOriginais = await response.json();
 
-                // Montar estrutura aninhada para facilitar seleção
-                dadosCompletos = {}; // reset
-                dadosOriginais.forEach(item => {
-                    const { Predio, Linha, Posto, Atividade } = item;
+                // Monta objeto aninhado: Predio -> Linha -> Posto -> [Atividades]
+                dadosCompletos = {};
+                dadosOriginais.forEach(({Predio, Linha, Posto, Atividade}) => {
                     if (!dadosCompletos[Predio]) dadosCompletos[Predio] = {};
                     if (!dadosCompletos[Predio][Linha]) dadosCompletos[Predio][Linha] = {};
                     if (!dadosCompletos[Predio][Linha][Posto]) dadosCompletos[Predio][Linha][Posto] = [];
@@ -171,9 +169,10 @@
                 });
 
                 preencherPredios();
+
             } catch (error) {
-                console.error("Não foi possível carregar o arquivo JSON:", error);
-                alert("Erro ao carregar os dados. Verifique o arquivo estrutura.json.");
+                console.error("Erro ao carregar JSON:", error);
+                alert("Erro ao carregar estrutura.json");
             }
         }
 
@@ -417,3 +416,4 @@
     </script>
 </body>
 </html>
+
