@@ -1,162 +1,419 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Cronômetro de Atividades</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    label, select, button {
-      display: block;
-      margin-top: 10px;
-    }
-    .botoes-tempo button {
-      margin-right: 5px;
-    }
-    #tempoAtividade {
-      font-size: 24px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Controle de Tempos por Atividade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2196f3" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 4px 6px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            margin: 6px 4px;
+            padding: 10px 18px;
+            font-size: 14px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            min-width: 80px;
+        }
+        .linha-tempo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            gap: 6px;
+        }
+        .linha-tempo span {
+            flex: 1;
+            text-align: left;
+            font-size: 12px;
+        }
+        #nomeOperadorLabel {
+            font-weight: bold;
+            margin-bottom: 4px;
+            display: block;
+            font-size: 14px;
+            color: #2196f3;
+        }
+        #nomeOperador {
+            font-size: 14px;
+            padding: 6px;
+            width: 100%;
+            max-width: 350px;
+            margin-bottom: 15px;
+            border: 2px solid #2196f3;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #nomeOperadorExibicao {
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        #tabelaResumo {
+            margin-top: 20px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        .botao-operacao {
+            background-color: #90ee90;
+        }
+        .botao-maquina {
+            background-color: #90ee90;
+        }
+        .botao-outros {
+            background-color: #f08080;
+        }
+        .botao-documentacao {
+            background-color: #d3d3d3;
+        }
+        input[type="file"],
+        select,
+        #nomeArquivo {
+            font-size: 14px;
+            padding: 6px;
+            margin: 8px 0;
+            width: 100%;
+            max-width: 350px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-  <h1>Registro de Atividades</h1>
+    <h2 style="font-size:18px; margin-bottom:12px;">Registro de Tempos por Atividade</h2>
 
-  <label for="selectPredio">Prédio:</label>
-  <select id="selectPredio" onchange="atualizarLinhas()">
-    <option value="">Selecione o prédio</option>
-  </select>
+    <label id="nomeOperadorLabel" for="nomeOperador">Nome do Operador:</label>
+    <input type="text" id="nomeOperador" placeholder="Digite o nome do operador" />
 
-  <label for="selectLinha">Linha:</label>
-  <select id="selectLinha" onchange="atualizarPostos()">
-    <option value="">Selecione a linha</option>
-  </select>
+    <select id="selectPredio" onchange="selecionarPredio()"><option value="">Selecione o prédio</option></select>
+    <select id="selectLinha" onchange="selecionarLinha()"><option value="">Selecione a linha</option></select>
+    <select id="selectPosto" onchange="selecionarPosto()"><option value="">Selecione o posto</option></select>
 
-  <label for="selectPosto">Posto:</label>
-  <select id="selectPosto" onchange="atualizarAtividades()">
-    <option value="">Selecione o posto</option>
-  </select>
+    <div id="nomeOperadorExibicao"></div>
 
-  <label for="selectAtividade">Atividade:</label>
-  <select id="selectAtividade">
-    <option value="">Selecione a atividade</option>
-  </select>
+    <div id="atividadeAtualTitulo" style="font-size:16px; margin: 12px 0;"></div>
+    <div id="botoes"></div>
+    <div id="botoesControle" style="display:flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
+        <button class="botao-documentacao" onclick="pularAtividade()" id="btnProxima">Próxima</button>
+        <button class="botao-documentacao" onclick="voltarAtividade()">Voltar</button>
+        <button class="botao-documentacao" id="btnParar" onclick="pararTudo()">Parar Tudo</button>
+    </div>
 
-  <div class="botoes-tempo">
-    <button onclick="iniciarAtividade('Operacao')">Operação</button>
-    <button onclick="iniciarAtividade('Maquina')">Máquina</button>
-    <button onclick="iniciarAtividade('Pessoal')">Pessoal</button>
-    <button onclick="iniciarAtividade('Qualidade')">Qualidade</button>
-    <button onclick="iniciarAtividade('Suprimentos')">Suprimentos</button>
-    <button onclick="iniciarAtividade('Manutencao')">Manutenção</button>
-    <button onclick="iniciarAtividade('Setup')">Setup</button>
-  </div>
+    <div style="margin-top:12px;">
+        <input type="text" id="nomeArquivo" placeholder="Nome do arquivo (sem extensão)" />
+        <button onclick="exportarCSV()" style="margin-top:6px; padding: 10px 20px; font-size: 14px;">Exportar Dados</button>
+    </div>
 
-  <div id="tempoAtividade">00:00:00</div>
+    <div id="tempoTotalAcumulado" style="margin-top: 12px; font-size: 14px;"></div>
+    <div id="tabelaResumo"></div>
 
-  <script>
-    let dadosJson = [];
-    let inicioAtividade = null;
-    let intervalo = null;
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+        const tiposTempo = [
+            { nome: "Operacao", classe: "botao-operacao" },
+            { nome: "Maquina", classe: "botao-maquina" },
+            { nome: "Movimentacao", classe: "botao-outros" },
+            { nome: "Espera", classe: "botao-outros" },
+            { nome: "Retrabalho", classe: "botao-outros" },
+            { nome: "Aciclicos", classe: "botao-documentacao" },
+        ];
 
-    fetch("estrutura.json")
-      .then(res => res.json())
-      .then(data => {
-        dadosJson = data;
-        preencherPredios();
-      })
-      .catch(err => {
-        console.error("Erro ao carregar estrutura.json:", err);
-      });
+        let dadosOriginais = []; // Array original do JSON
+        let dadosCompletos = {}; // Objeto aninhado: predio > linha > posto > atividades[]
+        let atividades = [];
+        let tempos = [];
+        let atividadeAtual = 0;
+        let tempoAtivo = null;
+        let intervalo = null;
+        let inicioTempo = null;
+        let predioSelecionado = "";
+        let linhaSelecionada = "";
+        let postoSelecionado = "";
 
-    function preencherPredios() {
-      const selectPredio = document.getElementById("selectPredio");
-      const predios = [...new Set(dadosJson.map(item => item.Predio))];
-      predios.forEach(predio => {
-        const option = document.createElement("option");
-        option.value = predio;
-        option.textContent = predio;
-        selectPredio.appendChild(option);
-      });
-    }
+        async function carregarDadosJSON() {
+            try {
+                const response = await fetch("estrutura.json");
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-    function atualizarLinhas() {
-      const predioSelecionado = document.getElementById("selectPredio").value;
-      const selectLinha = document.getElementById("selectLinha");
-      selectLinha.innerHTML = '<option value="">Selecione a linha</option>';
+                dadosOriginais = await response.json();
 
-      const linhas = [...new Set(dadosJson
-        .filter(item => item.Predio === predioSelecionado)
-        .map(item => item.Linha))];
+                // Montar estrutura aninhada para facilitar seleção
+                dadosCompletos = {}; // reset
+                dadosOriginais.forEach(item => {
+                    const { Predio, Linha, Posto, Atividade } = item;
+                    if (!dadosCompletos[Predio]) dadosCompletos[Predio] = {};
+                    if (!dadosCompletos[Predio][Linha]) dadosCompletos[Predio][Linha] = {};
+                    if (!dadosCompletos[Predio][Linha][Posto]) dadosCompletos[Predio][Linha][Posto] = [];
+                    if (!dadosCompletos[Predio][Linha][Posto].includes(Atividade)) {
+                        dadosCompletos[Predio][Linha][Posto].push(Atividade);
+                    }
+                });
 
-      linhas.forEach(linha => {
-        const option = document.createElement("option");
-        option.value = linha;
-        option.textContent = linha;
-        selectLinha.appendChild(option);
-      });
+                preencherPredios();
+            } catch (error) {
+                console.error("Não foi possível carregar o arquivo JSON:", error);
+                alert("Erro ao carregar os dados. Verifique o arquivo estrutura.json.");
+            }
+        }
 
-      document.getElementById("selectPosto").innerHTML = '<option value="">Selecione o posto</option>';
-      document.getElementById("selectAtividade").innerHTML = '<option value="">Selecione a atividade</option>';
-    }
+        function preencherPredios() {
+            const selectPredio = document.getElementById("selectPredio");
+            selectPredio.innerHTML = `<option value="">Selecione o prédio</option>`;
+            Object.keys(dadosCompletos).forEach(predio => {
+                const option = document.createElement("option");
+                option.value = predio;
+                option.text = predio;
+                selectPredio.appendChild(option);
+            });
+        }
 
-    function atualizarPostos() {
-      const predioSelecionado = document.getElementById("selectPredio").value;
-      const linhaSelecionada = document.getElementById("selectLinha").value;
-      const selectPosto = document.getElementById("selectPosto");
-      selectPosto.innerHTML = '<option value="">Selecione o posto</option>';
+        function selecionarPredio() {
+            predioSelecionado = document.getElementById("selectPredio").value;
+            linhaSelecionada = "";
+            postoSelecionado = "";
 
-      const postos = [...new Set(dadosJson
-        .filter(item => item.Predio === predioSelecionado && item.Linha === linhaSelecionada)
-        .map(item => item.Posto))];
+            const selectLinha = document.getElementById("selectLinha");
+            const selectPosto = document.getElementById("selectPosto");
 
-      postos.forEach(posto => {
-        const option = document.createElement("option");
-        option.value = posto;
-        option.textContent = posto;
-        selectPosto.appendChild(option);
-      });
+            selectLinha.innerHTML = `<option value="">Selecione a linha</option>`;
+            selectPosto.innerHTML = `<option value="">Selecione o posto</option>`;
 
-      document.getElementById("selectAtividade").innerHTML = '<option value="">Selecione a atividade</option>';
-    }
+            if (predioSelecionado) {
+                Object.keys(dadosCompletos[predioSelecionado]).forEach(linha => {
+                    const option = document.createElement("option");
+                    option.value = linha;
+                    option.text = linha;
+                    selectLinha.appendChild(option);
+                });
+            }
+            limparAtividade();
+        }
 
-    function atualizarAtividades() {
-      const predioSelecionado = document.getElementById("selectPredio").value;
-      const linhaSelecionada = document.getElementById("selectLinha").value;
-      const postoSelecionado = document.getElementById("selectPosto").value;
-      const selectAtividade = document.getElementById("selectAtividade");
-      selectAtividade.innerHTML = '<option value="">Selecione a atividade</option>';
+        function selecionarLinha() {
+            linhaSelecionada = document.getElementById("selectLinha").value;
+            postoSelecionado = "";
 
-      const atividades = [...new Set(dadosJson
-        .filter(item => item.Predio === predioSelecionado && item.Linha === linhaSelecionada && item.Posto === postoSelecionado)
-        .map(item => item.Atividade))];
+            const selectPosto = document.getElementById("selectPosto");
+            selectPosto.innerHTML = `<option value="">Selecione o posto</option>`;
 
-      atividades.forEach(atividade => {
-        const option = document.createElement("option");
-        option.value = atividade;
-        option.textContent = atividade;
-        selectAtividade.appendChild(option);
-      });
-    }
+            if (predioSelecionado && linhaSelecionada) {
+                Object.keys(dadosCompletos[predioSelecionado][linhaSelecionada]).forEach(posto => {
+                    const option = document.createElement("option");
+                    option.value = posto;
+                    option.text = posto;
+                    selectPosto.appendChild(option);
+                });
+            }
+            limparAtividade();
+        }
 
-    function iniciarAtividade(tipo) {
-      if (intervalo) clearInterval(intervalo);
-      inicioAtividade = new Date();
-      atualizarTempo();
-      intervalo = setInterval(atualizarTempo, 1000);
-    }
+        function selecionarPosto() {
+            postoSelecionado = document.getElementById("selectPosto").value;
+            if (!predioSelecionado || !linhaSelecionada || !postoSelecionado) return;
 
-    function atualizarTempo() {
-      if (!inicioAtividade) return;
-      const agora = new Date();
-      const diff = new Date(agora - inicioAtividade);
-      const horas = String(diff.getUTCHours()).padStart(2, '0');
-      const minutos = String(diff.getUTCMinutes()).padStart(2, '0');
-      const segundos = String(diff.getUTCSeconds()).padStart(2, '0');
-      document.getElementById("tempoAtividade").textContent = `${horas}:${minutos}:${segundos}`;
-    }
-  </script>
+            atividades = dadosCompletos[predioSelecionado][linhaSelecionada][postoSelecionado];
+            atividadeAtual = 0;
+            tempos = new Array(atividades.length).fill(null);
+            mostrarAtividade();
+            atualizarTempoTotal();
+            atualizarNomeOperadorExibicao();
+        }
+
+        function limparAtividade() {
+            pararTudo();
+            document.getElementById("atividadeAtualTitulo").innerHTML = "";
+            document.getElementById("botoes").innerHTML = "";
+            document.getElementById("btnProxima").style.display = "none";
+            document.getElementById("btnParar").style.display = "none";
+            document.getElementById("tabelaResumo").innerHTML = "";
+            document.getElementById("tempoTotalAcumulado").innerText = "";
+        }
+
+        function atualizarNomeOperadorExibicao() {
+            const nome = document.getElementById("nomeOperador").value.trim();
+            const div = document.getElementById("nomeOperadorExibicao");
+            div.textContent = nome ? `Operador: ${nome}` : "";
+        }
+
+        document.getElementById("nomeOperador").addEventListener("input", atualizarNomeOperadorExibicao);
+
+        function mostrarAtividade() {
+            const titulo = document.getElementById("atividadeAtualTitulo");
+            const div = document.getElementById("botoes");
+            const btnParar = document.getElementById("btnParar");
+            div.innerHTML = "";
+
+            const idx = atividadeAtual;
+
+            if (!atividades[idx]) {
+                titulo.innerHTML = "<h3>Todas as atividades foram registradas.</h3>";
+                document.getElementById("btnProxima").style.display = "none";
+                btnParar.style.display = "none";
+                atualizarTempoTotal();
+                gerarTabelaResumo();
+                return;
+            }
+
+            const atv = atividades[idx];
+            titulo.innerHTML = `<h3>Atividade: ${atv}</h3>`;
+
+            if (!tempos[idx]) {
+                tempos[idx] = { atividade: atv };
+                tiposTempo.forEach((t) => (tempos[idx][t.nome] = 0));
+            }
+
+            tiposTempo.forEach((t) => {
+                const linha = document.createElement("div");
+                linha.className = "linha-tempo";
+                linha.innerHTML = `
+                    <span>${t.nome}</span>
+                    <button class="${t.classe}" onclick="trocarTempo('${t.nome}')">Iniciar</button>
+                    <span id="${t.nome}-${idx}">${tempos[idx][t.nome].toFixed(2)}</span>
+                `;
+                div.appendChild(linha);
+            });
+
+            document.getElementById("btnProxima").style.display = "inline-block";
+            btnParar.style.display = "inline-block";
+            atualizarTempoTotal();
+        }
+
+        function trocarTempo(novoTipo) {
+            const idx = atividadeAtual;
+
+            if (tempoAtivo) {
+                clearInterval(intervalo);
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                tempos[idx][tempoAtivo] += decorrido;
+                document.getElementById(`${tempoAtivo}-${idx}`).innerText = tempos[idx][tempoAtivo].toFixed(2);
+            }
+
+            tempoAtivo = novoTipo;
+            inicioTempo = Date.now();
+            intervalo = setInterval(() => {
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                const total = tempos[idx][novoTipo] + decorrido;
+                document.getElementById(`${novoTipo}-${idx}`).innerText = total.toFixed(2);
+                atualizarTempoTotal();
+            }, 100);
+        }
+
+        function pararTudo() {
+            if (tempoAtivo) {
+                clearInterval(intervalo);
+                const idx = atividadeAtual;
+                const decorrido = (Date.now() - inicioTempo) / 60000;
+                tempos[idx][tempoAtivo] += decorrido;
+                document.getElementById(`${tempoAtivo}-${idx}`).innerText = tempos[idx][tempoAtivo].toFixed(2);
+                tempoAtivo = null;
+                atualizarTempoTotal();
+            }
+        }
+
+        function pularAtividade() {
+            pararTudo();
+            atividadeAtual++;
+            mostrarAtividade();
+        }
+
+        function voltarAtividade() {
+            pararTudo();
+            if (atividadeAtual > 0) {
+                atividadeAtual--;
+                mostrarAtividade();
+            }
+        }
+
+        function exportarCSV() {
+            const nomeOperador = document.getElementById("nomeOperador").value.trim();
+            if (!nomeOperador) {
+                alert("Por favor, preencha o nome do operador antes de exportar.");
+                return;
+            }
+            if (!tempos.length) {
+                alert("Nenhum dado para exportar.");
+                return;
+            }
+            const nomeArquivo =
+                document.getElementById("nomeArquivo").value || `tempos_${predioSelecionado}_${linhaSelecionada}_${postoSelecionado}`;
+            const dados = tempos
+                .filter(Boolean)
+                .map((t) => ({ Operador: nomeOperador, Predio: predioSelecionado, Linha: linhaSelecionada, Posto: postoSelecionado, ...t }));
+            const ws = XLSX.utils.json_to_sheet(dados);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Resultados");
+            XLSX.writeFile(wb, `${nomeArquivo}.xlsx`);
+        }
+
+        function calcularTempoTotal() {
+            let total = 0;
+            tempos.forEach((t) => {
+                if (t) tiposTempo.forEach((tt) => (total += t[tt.nome]));
+            });
+            return total;
+        }
+
+        function atualizarTempoTotal() {
+            document.getElementById(
+                "tempoTotalAcumulado"
+            ).innerText = `Tempo total acumulado: ${calcularTempoTotal().toFixed(2)} minutos`;
+        }
+
+        function gerarTabelaResumo() {
+            const divResumo = document.getElementById("tabelaResumo");
+            if (!tempos.length) return;
+
+            let html = "<h3>Resumo das Atividades:</h3><table><thead><tr><th>Atividade</th>";
+            tiposTempo.forEach((t) => {
+                html += `<th>${t.nome}</th>`;
+            });
+            html += "</tr></thead><tbody>";
+
+            tempos.forEach((t) => {
+                if (t) {
+                    html += `<tr><td>${t.atividade}</td>`;
+                    tiposTempo.forEach((tt) => {
+                        html += `<td>${t[tt.nome].toFixed(2)}</td>`;
+                    });
+                    html += "</tr>";
+                }
+            });
+
+            html += "</tbody></table>";
+            divResumo.innerHTML = html;
+        }
+
+        window.addEventListener("load", carregarDadosJSON);
+
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("sw.js")
+                    .then((reg) => console.log("Service Worker registrado", reg))
+                    .catch((err) => console.error("Erro no Service Worker", err));
+            });
+        }
+    </script>
 </body>
 </html>
