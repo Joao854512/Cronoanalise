@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Cronômetro de Atividades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    label, select, button {
+      display: block;
+      margin-top: 10px;
+    }
+    .botoes-tempo button {
+      margin-right: 5px;
+    }
+    #tempoAtividade {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Registro de Atividades</h2>
+  <h1>Registro de Atividades</h1>
 
   <label for="selectPredio">Prédio:</label>
-  <select id="selectPredio" onchange="selecionarPredio()">
+  <select id="selectPredio" onchange="atualizarLinhas()">
     <option value="">Selecione o prédio</option>
   </select>
 
   <label for="selectLinha">Linha:</label>
-  <select id="selectLinha" onchange="selecionarLinha()">
+  <select id="selectLinha" onchange="atualizarPostos()">
     <option value="">Selecione a linha</option>
   </select>
 
   <label for="selectPosto">Posto:</label>
-  <select id="selectPosto" onchange="selecionarPosto()">
+  <select id="selectPosto" onchange="atualizarAtividades()">
     <option value="">Selecione o posto</option>
   </select>
 
@@ -27,42 +44,57 @@
     <option value="">Selecione a atividade</option>
   </select>
 
+  <div class="botoes-tempo">
+    <button onclick="iniciarAtividade('Operacao')">Operação</button>
+    <button onclick="iniciarAtividade('Maquina')">Máquina</button>
+    <button onclick="iniciarAtividade('Pessoal')">Pessoal</button>
+    <button onclick="iniciarAtividade('Qualidade')">Qualidade</button>
+    <button onclick="iniciarAtividade('Suprimentos')">Suprimentos</button>
+    <button onclick="iniciarAtividade('Manutencao')">Manutenção</button>
+    <button onclick="iniciarAtividade('Setup')">Setup</button>
+  </div>
+
+  <div id="tempoAtividade">00:00:00</div>
+
   <script>
     let dadosJson = [];
+    let inicioAtividade = null;
+    let intervalo = null;
 
-    async function carregarDadosJSON() {
-      try {
-        const response = await fetch("estrutura.json", { cache: "no-store" });
-        if (!response.ok) throw new Error("Erro ao carregar estrutura.json");
-        dadosJson = await response.json();
+    fetch("estrutura.json")
+      .then(res => res.json())
+      .then(data => {
+        dadosJson = data;
         preencherPredios();
-      } catch (error) {
-        console.error("Erro ao carregar estrutura.json:", error);
-        alert("Falha ao carregar os dados de estrutura.json");
-      }
-    }
+      })
+      .catch(err => {
+        console.error("Erro ao carregar estrutura.json:", err);
+      });
 
     function preencherPredios() {
-      const select = document.getElementById("selectPredio");
+      const selectPredio = document.getElementById("selectPredio");
       const predios = [...new Set(dadosJson.map(item => item.Predio))];
-      select.innerHTML = '<option value="">Selecione o prédio</option>';
       predios.forEach(predio => {
         const option = document.createElement("option");
         option.value = predio;
-        option.text = predio;
-        select.appendChild(option);
+        option.textContent = predio;
+        selectPredio.appendChild(option);
       });
     }
 
-    function selecionarPredio() {
-      const predio = document.getElementById("selectPredio").value;
-      const linhas = [...new Set(dadosJson.filter(item => item.Predio === predio).map(item => item.Linha))];
+    function atualizarLinhas() {
+      const predioSelecionado = document.getElementById("selectPredio").value;
       const selectLinha = document.getElementById("selectLinha");
       selectLinha.innerHTML = '<option value="">Selecione a linha</option>';
+
+      const linhas = [...new Set(dadosJson
+        .filter(item => item.Predio === predioSelecionado)
+        .map(item => item.Linha))];
+
       linhas.forEach(linha => {
         const option = document.createElement("option");
         option.value = linha;
-        option.text = linha;
+        option.textContent = linha;
         selectLinha.appendChild(option);
       });
 
@@ -70,43 +102,61 @@
       document.getElementById("selectAtividade").innerHTML = '<option value="">Selecione a atividade</option>';
     }
 
-    function selecionarLinha() {
-      const predio = document.getElementById("selectPredio").value;
-      const linha = document.getElementById("selectLinha").value;
-      const postos = [...new Set(dadosJson.filter(item => item.Predio === predio && item.Linha === linha).map(item => item.Posto))];
+    function atualizarPostos() {
+      const predioSelecionado = document.getElementById("selectPredio").value;
+      const linhaSelecionada = document.getElementById("selectLinha").value;
       const selectPosto = document.getElementById("selectPosto");
       selectPosto.innerHTML = '<option value="">Selecione o posto</option>';
+
+      const postos = [...new Set(dadosJson
+        .filter(item => item.Predio === predioSelecionado && item.Linha === linhaSelecionada)
+        .map(item => item.Posto))];
+
       postos.forEach(posto => {
         const option = document.createElement("option");
         option.value = posto;
-        option.text = posto;
+        option.textContent = posto;
         selectPosto.appendChild(option);
       });
 
       document.getElementById("selectAtividade").innerHTML = '<option value="">Selecione a atividade</option>';
     }
 
-    function selecionarPosto() {
-      const predio = document.getElementById("selectPredio").value;
-      const linha = document.getElementById("selectLinha").value;
-      const posto = document.getElementById("selectPosto").value;
-      const atividades = [...new Set(dadosJson.filter(item =>
-        item.Predio === predio &&
-        item.Linha === linha &&
-        item.Posto === posto
-      ).map(item => item.Atividade))];
+    function atualizarAtividades() {
+      const predioSelecionado = document.getElementById("selectPredio").value;
+      const linhaSelecionada = document.getElementById("selectLinha").value;
+      const postoSelecionado = document.getElementById("selectPosto").value;
       const selectAtividade = document.getElementById("selectAtividade");
       selectAtividade.innerHTML = '<option value="">Selecione a atividade</option>';
+
+      const atividades = [...new Set(dadosJson
+        .filter(item => item.Predio === predioSelecionado && item.Linha === linhaSelecionada && item.Posto === postoSelecionado)
+        .map(item => item.Atividade))];
+
       atividades.forEach(atividade => {
         const option = document.createElement("option");
         option.value = atividade;
-        option.text = atividade;
+        option.textContent = atividade;
         selectAtividade.appendChild(option);
       });
     }
 
-    window.addEventListener("load", carregarDadosJSON);
+    function iniciarAtividade(tipo) {
+      if (intervalo) clearInterval(intervalo);
+      inicioAtividade = new Date();
+      atualizarTempo();
+      intervalo = setInterval(atualizarTempo, 1000);
+    }
+
+    function atualizarTempo() {
+      if (!inicioAtividade) return;
+      const agora = new Date();
+      const diff = new Date(agora - inicioAtividade);
+      const horas = String(diff.getUTCHours()).padStart(2, '0');
+      const minutos = String(diff.getUTCMinutes()).padStart(2, '0');
+      const segundos = String(diff.getUTCSeconds()).padStart(2, '0');
+      document.getElementById("tempoAtividade").textContent = `${horas}:${minutos}:${segundos}`;
+    }
   </script>
 </body>
 </html>
-
